@@ -141,4 +141,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/eneshecan/whatsapp-for-linux.git
-        tag: v1.4.4
+        tag: v1.4.5
