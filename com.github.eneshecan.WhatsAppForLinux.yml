@@ -110,6 +110,8 @@ modules:
 
   - shared-modules/intltool/intltool-0.51.json
 
+  - shared-modules/libcanberra/libcanberra.json
+
   - name: libdbusmenu-gtk3
     buildsystem: autotools
     build-options:
@@ -142,4 +144,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/eneshecan/whatsapp-for-linux.git
-        tag: v1.5.2
+        tag: v1.6.0
