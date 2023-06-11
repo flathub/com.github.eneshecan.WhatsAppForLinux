@@ -7,7 +7,7 @@
   <launchable type="desktop-id">com.github.eneshecan.WhatsAppForLinux</launchable>
   <name>WhatsApp for Linux</name>
   <developer_name>Enes Hecan</developer_name>
-  <summary>Revolt desktop app</summary>
+  <summary>WhatsApp For Linux</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <url type="homepage">https://github.com/eneshecan/whatsapp-for-linux</url>
