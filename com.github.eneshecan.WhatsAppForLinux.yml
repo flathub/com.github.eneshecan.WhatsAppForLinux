@@ -1,6 +1,6 @@
 app-id: com.github.eneshecan.WhatsAppForLinux
 runtime: org.gnome.Platform
-runtime-version: '43'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: whatsapp-for-linux
 finish-args:
@@ -28,8 +28,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz
-        sha256: e954c09b4309a7ef93e13b69260acdc5738c907477eb381b78bb1e414ee6dbd8
+        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.5.tar.xz
+        sha256: 705c6d29f4116a29bde4e36cfc1b046c92b6ef8c6dae4eaec85018747e6da5aa
     cleanup:
       - '*'
 
@@ -38,8 +38,8 @@ modules:
       - --disable-documentation
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libsigc++/2.10/libsigc++-2.10.8.tar.xz
-        sha256: 235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a
+        url: https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.0.tar.xz
+        sha256: 1c466d2e64b34f9b118976eb21b138c37ed124d0f61497df2a90ce6c3d9fa3b5
 
   - name: cairomm
     config-opts:
@@ -48,8 +48,8 @@ modules:
       - /lib/cairomm-1.0
     sources:
       - type: archive
-        url: https://www.cairographics.org/releases/cairomm-1.14.3.tar.xz
-        sha256: 0d37e067c5c4ca7808b7ceddabfe1932c5bd2a750ad64fb321e1213536297e78
+        url: https://www.cairographics.org/releases/cairomm-1.14.4.tar.xz
+        sha256: 4749d25a2b2ef67cc0c014caaf5c87fa46792fc4b3ede186fb0fc932d2055158
 
   - name: glibmm
     cleanup:
@@ -60,8 +60,8 @@ modules:
       - -Dbuild-examples=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.2.tar.xz
-        sha256: b2a4cd7b9ae987794cbb5a1becc10cecb65182b9bb841868625d6bbb123edb1d
+        url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.6.tar.xz
+        sha256: 5358742598181e5351d7bf8da072bf93e6dd5f178d27640d4e462bc8f14e152f
 
   - name: pangomm
     buildsystem: meson
@@ -69,8 +69,8 @@ modules:
       - -Dbuild-documentation=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.2.tar.xz
-        sha256: 57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4
+        url: https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.3.tar.xz
+        sha256: 410fe04d471a608f3f0273d3a17d840241d911ed0ff2c758a9859c66c6f24379
 
   - name: atkmm
     buildsystem: meson
@@ -80,8 +80,8 @@ modules:
       - /lib/atkmm-1.6
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.2.tar.xz
-        sha256: a0bb49765ceccc293ab2c6735ba100431807d384ffa14c2ebd30e07993fd2fa4
+        url: https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.3.tar.xz
+        sha256: 7c2088b486a909be8da2b18304e56c5f90884d1343c8da7367ea5cd3258b9969
 
   - name: gtkmm
     buildsystem: meson
@@ -91,8 +91,8 @@ modules:
       - /lib/gtkmm-3.0
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.5.tar.xz
-        sha256: 856333de86689f6a81c123f2db15d85db9addc438bc3574c36f15736aeae22e6
+        url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.7.tar.xz
+        sha256: 1d7a35af9c5ceccacb244ee3c2deb9b245720d8510ac5c7e6f4b6f9947e6789c
 
   - name: ayatana-ido
     buildsystem: cmake-ninja
