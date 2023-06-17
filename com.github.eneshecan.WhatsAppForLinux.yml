@@ -48,8 +48,8 @@ modules:
       - /lib/cairomm-1.0
     sources:
       - type: archive
-        url: https://www.cairographics.org/releases/cairomm-1.14.3.tar.xz
-        sha256: 0d37e067c5c4ca7808b7ceddabfe1932c5bd2a750ad64fb321e1213536297e78
+        url: https://www.cairographics.org/releases/cairomm-1.14.4.tar.xz
+        sha256: 4749d25a2b2ef67cc0c014caaf5c87fa46792fc4b3ede186fb0fc932d2055158
 
   - name: glibmm
     cleanup:
