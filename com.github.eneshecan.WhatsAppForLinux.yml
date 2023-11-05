@@ -22,6 +22,7 @@ finish-args:
   - --filesystem=xdg-videos
 cleanup:
   - "/include"
+  - "/lib/pkgconfig"
   - "*.la"
 modules:
   - dependencies/gtkmm-3.0.yml
