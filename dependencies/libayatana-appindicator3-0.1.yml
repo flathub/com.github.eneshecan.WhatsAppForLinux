@@ -7,6 +7,11 @@ sources:
   - type: git
     url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
     tag: 0.5.90
+    commit: afb37c43766bba9f3b5d8d827362fb843a85ca0f
+    x-checker-data:
+      type: anitya
+      project-id: 18446
+      tag-template: $version
 modules:
   - name: ayatana-ido
     buildsystem: cmake-ninja
@@ -14,6 +19,11 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/ayatana-ido.git
         tag: 0.9.1
+        commit: 9e8a410fb703456654f21df96088f6bae34748b7
+        x-checker-data:
+          type: anitya
+          project-id: 18445
+          tag-template: $version
 
   - name: libayatana-indicator
     buildsystem: cmake-ninja
@@ -21,6 +31,11 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-indicator.git
         tag: 0.9.1
+        commit: 80dae4063c70af0c0038aa7facf475bdc962d4f7
+        x-checker-data:
+          type: anitya
+          project-id: 18447
+          tag-template: $version
 
   - name: libdbusmenu-gtk3
     buildsystem: autotools
