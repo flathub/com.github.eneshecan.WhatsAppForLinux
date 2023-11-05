@@ -6,8 +6,8 @@ cleanup:
   - /lib/gtkmm-3.0
 sources:
   - type: archive
-    url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.7.tar.xz
-    sha256: 1d7a35af9c5ceccacb244ee3c2deb9b245720d8510ac5c7e6f4b6f9947e6789c
+    url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.8.tar.xz
+    sha256: d2940c64922e5b958554b23d4c41d1839ea9e43e0d2e5b3819cfb46824a098c4
     x-checker-data:
       type: anitya
       project-id: 311572
@@ -31,8 +31,8 @@ modules:
       - --disable-documentation
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.0.tar.xz
-        sha256: 1c466d2e64b34f9b118976eb21b138c37ed124d0f61497df2a90ce6c3d9fa3b5
+        url: https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.1.tar.xz
+        sha256: a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843
         x-checker-data:
           type: anitya
           project-id: 311642
@@ -45,8 +45,8 @@ modules:
       - /lib/cairomm-1.0
     sources:
       - type: archive
-        url: https://www.cairographics.org/releases/cairomm-1.14.4.tar.xz
-        sha256: 4749d25a2b2ef67cc0c014caaf5c87fa46792fc4b3ede186fb0fc932d2055158
+        url: https://www.cairographics.org/releases/cairomm-1.14.5.tar.xz
+        sha256: 70136203540c884e89ce1c9edfb6369b9953937f6cd596d97c78c9758a5d48db
         x-checker-data:
           type: anitya
           project-id: 369459
