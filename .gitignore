@@ -1,3 +1,5 @@
 # IDE folders
 .idea/
 .vscode/
+.flatpak-builder/
+build/

@@ -1,0 +1,98 @@
+name: gtkmm
+buildsystem: meson
+config-opts:
+  - -Dbuild-documentation=false
+cleanup:
+  - /lib/gtkmm-3.0
+sources:
+  - type: archive
+    url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.8.tar.xz
+    sha256: d2940c64922e5b958554b23d4c41d1839ea9e43e0d2e5b3819cfb46824a098c4
+    x-checker-data:
+      type: anitya
+      project-id: 311572
+      url-template: https://download.gnome.org/sources/gtkmm/$major.$minor/gtkmm-$version.tar.xz
+modules:
+  - name: mm-common
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.5.tar.xz
+        sha256: 705c6d29f4116a29bde4e36cfc1b046c92b6ef8c6dae4eaec85018747e6da5aa
+        x-checker-data:
+          type: anitya
+          project-id: 13152
+          url-template: https://download.gnome.org/sources/mm-common/$major.$minor/mm-common-$version.tar.xz
+    cleanup:
+      - '*'
+
+  - name: sigc++-2
+    config-opts:
+      - --disable-documentation
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.1.tar.xz
+        sha256: a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843
+        x-checker-data:
+          type: anitya
+          project-id: 311642
+          url-template: https://download.gnome.org/sources/libsigc++/$major.$minor/libsigc++-$version.tar.xz
+
+  - name: cairomm
+    config-opts:
+      - --disable-documentation
+    cleanup:
+      - /lib/cairomm-1.0
+    sources:
+      - type: archive
+        url: https://www.cairographics.org/releases/cairomm-1.14.5.tar.xz
+        sha256: 70136203540c884e89ce1c9edfb6369b9953937f6cd596d97c78c9758a5d48db
+        x-checker-data:
+          type: anitya
+          project-id: 369459
+          url-template: https://www.cairographics.org/releases/cairomm-$version.tar.xz
+
+  - name: glibmm
+    cleanup:
+      - /lib/glibmm-2.4
+    buildsystem: meson
+    config-opts:
+      - -Dbuild-documentation=false
+      - -Dbuild-examples=false
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.6.tar.xz
+        sha256: 5358742598181e5351d7bf8da072bf93e6dd5f178d27640d4e462bc8f14e152f
+        x-checker-data:
+          type: anitya
+          project-id: 369440
+          url-template: https://download.gnome.org/sources/glibmm/$major.$minor/glibmm-$version.tar.xz
+
+  - name: pangomm
+    buildsystem: meson
+    config-opts:
+      - -Dbuild-documentation=false
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.3.tar.xz
+        sha256: 410fe04d471a608f3f0273d3a17d840241d911ed0ff2c758a9859c66c6f24379
+        x-checker-data:
+          type: anitya
+          project-id: 369412
+          url-template: https://download.gnome.org/sources/pangomm/$major.$minor/pangomm-$version.tar.xz
+
+  - name: atkmm
+    buildsystem: meson
+    config-opts:
+      - -Dbuild-documentation=false
+    cleanup:
+      - /lib/atkmm-1.6
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.3.tar.xz
+        sha256: 7c2088b486a909be8da2b18304e56c5f90884d1343c8da7367ea5cd3258b9969
+        x-checker-data:
+          type: anitya
+          project-id: 7962
+          versions: {<: '2.29'}
+          url-template: https://download.gnome.org/sources/atkmm/$major.$minor/atkmm-$version.tar.xz

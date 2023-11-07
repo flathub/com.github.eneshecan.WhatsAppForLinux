@@ -1,6 +1,6 @@
 app-id: com.github.eneshecan.WhatsAppForLinux
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: whatsapp-for-linux
 finish-args:
@@ -12,8 +12,6 @@ finish-args:
   - --socket=pulseaudio
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --filesystem=/dev/log
-  - --filesystem=/var/run/syslog
   - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
@@ -22,122 +20,16 @@ finish-args:
   - --filesystem=xdg-videos
 cleanup:
   - "/include"
+  - "/lib/pkgconfig"
   - "*.la"
 modules:
-  - name: mm-common
-    buildsystem: meson
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.5.tar.xz
-        sha256: 705c6d29f4116a29bde4e36cfc1b046c92b6ef8c6dae4eaec85018747e6da5aa
-    cleanup:
-      - '*'
-
-  - name: sigc++-2
-    config-opts:
-      - --disable-documentation
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libsigc++/2.12/libsigc++-2.12.0.tar.xz
-        sha256: 1c466d2e64b34f9b118976eb21b138c37ed124d0f61497df2a90ce6c3d9fa3b5
-
-  - name: cairomm
-    config-opts:
-      - --disable-documentation
-    cleanup:
-      - /lib/cairomm-1.0
-    sources:
-      - type: archive
-        url: https://www.cairographics.org/releases/cairomm-1.14.4.tar.xz
-        sha256: 4749d25a2b2ef67cc0c014caaf5c87fa46792fc4b3ede186fb0fc932d2055158
-
-  - name: glibmm
-    cleanup:
-      - /lib/glibmm-2.4
-    buildsystem: meson
-    config-opts:
-      - -Dbuild-documentation=false
-      - -Dbuild-examples=false
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.6.tar.xz
-        sha256: 5358742598181e5351d7bf8da072bf93e6dd5f178d27640d4e462bc8f14e152f
-
-  - name: pangomm
-    buildsystem: meson
-    config-opts:
-      - -Dbuild-documentation=false
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.3.tar.xz
-        sha256: 410fe04d471a608f3f0273d3a17d840241d911ed0ff2c758a9859c66c6f24379
-
-  - name: atkmm
-    buildsystem: meson
-    config-opts:
-      - -Dbuild-documentation=false
-    cleanup:
-      - /lib/atkmm-1.6
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.3.tar.xz
-        sha256: 7c2088b486a909be8da2b18304e56c5f90884d1343c8da7367ea5cd3258b9969
-
-  - name: gtkmm
-    buildsystem: meson
-    config-opts:
-      - -Dbuild-documentation=false
-    cleanup:
-      - /lib/gtkmm-3.0
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.7.tar.xz
-        sha256: 1d7a35af9c5ceccacb244ee3c2deb9b245720d8510ac5c7e6f4b6f9947e6789c
-
-  - name: ayatana-ido
-    buildsystem: cmake-ninja
-    sources:
-      - type: git
-        url: https://github.com/AyatanaIndicators/ayatana-ido.git
-        tag: 0.9.1
-
-  - name: libayatana-indicator
-    buildsystem: cmake-ninja
-    sources:
-      - type: git
-        url: https://github.com/AyatanaIndicators/libayatana-indicator.git
-        tag: 0.9.1
+  - dependencies/gtkmm-3.0.yml
 
   - shared-modules/intltool/intltool-0.51.json
 
   - shared-modules/libcanberra/libcanberra.json
 
-  - name: libdbusmenu-gtk3
-    buildsystem: autotools
-    build-options:
-      cflags: -Wno-error
-    config-opts:
-      - --with-gtk=3
-      - --disable-dumper
-      - --disable-static
-      - --enable-tests
-      - --disable-gtk-doc
-      - --enable-introspection=no
-      - --disable-vala
-    sources:
-      - type: archive
-        url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
-        sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
-
-  - name: libayatana-appindicator
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DENABLE_BINDINGS_MONO=NO
-      - -DENABLE_BINDINGS_VALA=NO
-    sources:
-      - type: git
-        url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
-        tag: 0.5.90
+  - dependencies/libayatana-appindicator3-0.1.yml
 
   - name: whatsapp-for-linux
     buildsystem: cmake-ninja
@@ -145,3 +37,10 @@ modules:
       - type: git
         url: https://github.com/eneshecan/whatsapp-for-linux.git
         tag: v1.6.4
+        commit: 1655a5ef21138c31b9a8f02bdae469789c5c480e
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/eneshecan/whatsapp-for-linux/releases/latest
+          timestamp-query: .published_at
+          version-query: .tag_name | sub("^v"; "")
+          tag-query: .tag_name
