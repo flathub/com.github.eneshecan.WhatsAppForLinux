@@ -17,8 +17,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.5.tar.xz
-        sha256: 705c6d29f4116a29bde4e36cfc1b046c92b6ef8c6dae4eaec85018747e6da5aa
+        url: https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.6.tar.xz
+        sha256: b55c46037dbcdabc5cee3b389ea11cc3910adb68ebe883e9477847aa660862e7
         x-checker-data:
           type: anitya
           project-id: 13152
