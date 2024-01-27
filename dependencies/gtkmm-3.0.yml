@@ -74,8 +74,8 @@ modules:
       - -Dbuild-documentation=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.3.tar.xz
-        sha256: 410fe04d471a608f3f0273d3a17d840241d911ed0ff2c758a9859c66c6f24379
+        url: https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.4.tar.xz
+        sha256: b92016661526424de4b9377f1512f59781f41fb16c9c0267d6133ba1cd68db22
         x-checker-data:
           type: anitya
           project-id: 369412
