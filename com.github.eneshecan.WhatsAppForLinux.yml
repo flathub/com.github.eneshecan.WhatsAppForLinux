@@ -36,8 +36,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/eneshecan/whatsapp-for-linux.git
-        tag: v1.6.4
-        commit: 1655a5ef21138c31b9a8f02bdae469789c5c480e
+        tag: v1.6.5
+        commit: 2717ff67871696ca2c9c3b2c7f47678139411d12
         x-checker-data:
           type: json
           url: https://api.github.com/repos/eneshecan/whatsapp-for-linux/releases/latest
